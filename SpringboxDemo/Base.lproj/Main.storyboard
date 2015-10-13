@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wCe-FR-Hq0">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Springbox Demo-->
+        <scene sceneID="xl3-5Y-DBL">
+            <objects>
+                <viewController id="CBV-Nz-uYC" customClass="ViewController" customModule="SpringboxDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w0o-48-N31"/>
+                        <viewControllerLayoutGuide type="bottom" id="vRW-sa-MNs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8db-Uf-uta">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landscape_thumbnail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Vms-cb-Jan">
+                                <rect key="frame" x="195" y="120" width="210" height="140"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="f23-sg-VBg"/>
+                                    <constraint firstAttribute="height" constant="140" id="hxN-Oy-OWx"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VbM-Rr-O8z" appends="YES" id="Lvy-7V-D9L"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait_thumbnail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9Nd-JX-lZ4">
+                                <rect key="frame" x="236" y="340" width="128" height="200"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="wfA-Wp-qmD"/>
+                                    <constraint firstAttribute="height" constant="200" id="z1X-Pt-XcG"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pLh-WF-wJw" appends="YES" id="ghZ-68-boN"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vms-cb-Jan" firstAttribute="centerX" secondItem="8db-Uf-uta" secondAttribute="centerX" id="2n7-pS-efl">
+                                <variation key="heightClass=compact" constant="-120"/>
+                            </constraint>
+                            <constraint firstItem="Vms-cb-Jan" firstAttribute="centerY" secondItem="8db-Uf-uta" secondAttribute="centerY" constant="-110" id="Gsr-dX-Yu6">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="9Nd-JX-lZ4" firstAttribute="centerX" secondItem="8db-Uf-uta" secondAttribute="centerX" id="bd6-c1-phr">
+                                <variation key="heightClass=compact" constant="150"/>
+                            </constraint>
+                            <constraint firstItem="9Nd-JX-lZ4" firstAttribute="centerY" secondItem="8db-Uf-uta" secondAttribute="centerY" constant="140" id="dKa-UJ-JiF">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Springbox Demo" id="DcR-dm-5eN"/>
+                    <connections>
+                        <outlet property="landscapeImageView" destination="Vms-cb-Jan" id="vz7-bd-cpz"/>
+                        <outlet property="portraitImageView" destination="9Nd-JX-lZ4" id="pis-WY-lsi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afW-JG-tQx" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VbM-Rr-O8z">
+                    <connections>
+                        <action selector="showSpringbox:" destination="CBV-Nz-uYC" id="f90-6G-CfZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="pLh-WF-wJw">
+                    <connections>
+                        <action selector="showSpringbox:" destination="CBV-Nz-uYC" id="rlW-NL-qtu"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="333" y="486"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mnS-l0-agq">
+            <objects>
+                <navigationController id="wCe-FR-Hq0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0pu-4E-XRr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CBV-Nz-uYC" kind="relationship" relationship="rootViewController" id="1eb-d3-m9W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6IV-yH-6Y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-470" y="486"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="landscape_thumbnail.jpg" width="1000" height="667"/>
+        <image name="portrait_thumbnail.jpg" width="667" height="1000"/>
+    </resources>
+</document>
